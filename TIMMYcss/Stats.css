@@ -1,0 +1,23 @@
+.Texthd {
+    text-align: center;
+    font-size: 28px; /* ขนาดของข้อความสามารถปรับได้ตามต้องการ */
+    margin-bottom: 20px;
+}
+.containerS {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+}
+canvas {
+    max-width: 100%;
+    height: 400px;
+}
+.total-usage {
+    font-size: 28px;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}

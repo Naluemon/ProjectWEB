@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO events (event, eventDate, eventTime, color, createdBy, userid) VALUES ('$event', '$eventDate', '$eventTime', '$color', '$createdBy','$userid')";
     
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Event added successfully!'); window.location.href='Calendar.php';</script>";
+        echo "<script>alert('Event added successfully!'); window.location.href='Calendar.php';</script>";/*test 1234 */
     } else {
         echo "<script>alert('Failed to add event.'); window.location.href='Calendar.php';</script>";
     }

@@ -44,4 +44,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "No data!";
 }
 ?>
-<meta http-equiv="refresh" content="1;URL=Calendar.php"/>
+<meta http-equiv="refresh" content="1;URL=Calendar.php" />

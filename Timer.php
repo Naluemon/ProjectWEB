@@ -163,8 +163,6 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
                 if (minutes === 0) {
                     if (hours === 0) {
                         clearInterval(timerInterval);
-                        // playSound();
-                        // const title = document.getElementById("title").value;
                         // ใช้ชื่อใน alert
                         const title = urlParams.get('title') || "Time up!";
                         showCustomAlert(title); // เรียก Custom Dialog เมื่อเวลาหมด

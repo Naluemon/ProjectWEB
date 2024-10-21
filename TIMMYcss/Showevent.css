@@ -1,7 +1,22 @@
+.table thead th {
+  background-color: #007bff; /* สีพื้นหลังของหัวตาราง */
+  color: white; /* สีของตัวอักษรในหัวตาราง */
+}
+.table tbody tr:hover {
+  background-color: #f1f1f1; /* สีพื้นหลังเมื่อมีการโฮเวอร์ */
+}
+.btn-primary {
+  background-color: #28a745; /* สีปุ่มแก้ไข */
+  border-color: #28a745; /* สีเส้นขอบปุ่มแก้ไข */
+}
+.btn-danger {
+  background-color: #dc3545; /* สีปุ่มลบ */
+  border-color: #dc3545; /* สีเส้นขอบปุ่มลบ */
+}
 table {
   width: 400px;
   border-collapse: collapse;
-  margin-top: -50px;
+  margin-top: 20px;
   border-radius: 15px; /* กรอบโค้ง */
   overflow: hidden; /* ซ่อนส่วนที่เกินจากขอบโค้ง */
   border: -2px solid #ffcc00; /* เส้นขอบรอบตาราง */

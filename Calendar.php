@@ -343,7 +343,7 @@ mysqli_close($conn);
             }
         });
         function confirmLogout() {
-        return confirm('Are you sure you want to logout'); // แสดงข้อความยืนยัน
+        return confirm ('Are you sure you want to logout'); // แสดงข้อความยืนยัน
     }
     </script>
 </body>

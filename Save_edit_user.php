@@ -1,45 +1,55 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-     <head>
-     <script>
-        function showAlert(message) {
-            alert(message); 
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.0.0/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function showAlert(title, text, icon) {
+            Swal.fire({
+                title: title,
+                timer:1000,
+                text: text,
+                icon: icon,
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = "Profileuser.php"; // เปลี่ยนไปที่หน้าที่ต้องการหลังจากกด OK
+            });
         }
     </script>
-    </head>
-    <body>
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "timmy"; 
-    $conn = mysqli_connect($servername,$username,$password,$dbname);
-    $sql="update member set email ='".trim($_POST["email"])."',
-    Password = '".trim($_POST['Password'])."',
-    Firstname = '".trim($_POST['Firstname'])."',
-    Lastname = '".trim($_POST['Lastname'])."',
-    Status = '".trim($_POST['Status'])."'
-    where UserID = '".$_SESSION['UserID']."'";
-    
-    try {
-        if (mysqli_query($conn, $sql)) {
-            echo "<script>showAlert('แก้ไขข้อมูลเรียบร้อยแล้ว');</script>";
-        } else {
-            throw new Exception(mysqli_error($conn));
-        }
-    } catch (Exception $e) {
-        if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
-            // ถ้าเกิดข้อผิดพลาด Duplicate entry
-            echo "<script>showAlert('This email is taken use other email');</script>";
-        } else {
-            echo "<script>showAlert('error: ".$e->getMessage()."');</script>";
-        }
+</head>
+<body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "timmy"; 
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+$sql = "UPDATE member SET email = '" . trim($_POST["email"]) . "',
+    Password = '" . trim($_POST['Password']) . "',
+    Firstname = '" . trim($_POST['Firstname']) . "',
+    Lastname = '" . trim($_POST['Lastname']) . "',
+    Status = '" . trim($_POST['Status']) . "'
+    WHERE UserID = '" . $_SESSION['UserID'] . "'";
+
+try {
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>showAlert('สำเร็จ!', 'แก้ไขข้อมูลเรียบร้อยแล้ว', 'success');</script>";
+    } else {
+        throw new Exception(mysqli_error($conn));
     }
-    mysqli_close($conn);
-    ?>
-    </body>
+} catch (Exception $e) {
+    if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
+        // ถ้าเกิดข้อผิดพลาด Duplicate entry
+        echo "<script>showAlert('ข้อผิดพลาด!', 'This email is taken use other email', 'error');</script>";
+    } else {
+        echo "<script>showAlert('ข้อผิดพลาด!', 'error: " . $e->getMessage() . "', 'error');</script>";
+    }
+}
+
+mysqli_close($conn);
+?>
+</body>
 </html>
-<meta http-equiv="refresh" content="0.5;URL=Profileuser.php"/>

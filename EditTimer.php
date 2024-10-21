@@ -27,7 +27,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TIMMY.com</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="TIMMYcss/Head for EditTime.css">
+    <link rel="stylesheet" href="TIMMYcss/EditTime.css">
     <script src="js/bootstrap.bundle.min.js"></script> 
 </head>
 <body>
@@ -132,22 +132,19 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
             <option value="audio/song5.mp3">Song 5 </option>
         </select>
     </div>
-
     <div class="audio">
         <audio id="audioPlayer" controls class="audio">
             <source id="audioSource" src="audio/song1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-    </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div> 
     <div class="repeat1">
             <label for="repeat">Repeat Sound </label>
             <input type="checkbox" id="repeat">
     </div>
         
         <div class="btn-container">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn-cancle" onclick= "window.location.href = 'Timer.php'">Cancle</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn-cancle" onclick= "window.location.href = 'Timer.php'">Cancle</a></button>
             <button class="btn-start" onclick="startTimer()">Start Timer</a></button>
             
         </div>

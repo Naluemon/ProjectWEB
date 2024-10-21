@@ -1,0 +1,180 @@
+body {
+  background-color: #ffecec;
+  font-family: "Bahnschrift SemiBold SemiCondensed";
+}
+.navbar {
+  background-color: #002953; /* สีน้ำเงิน */
+  padding: 10px;
+}
+.navbar-brand {
+  color: white !important; /* เปลี่ยนสีลิงก์เป็นสีขาว */
+  font-size: 35px; /* ปรับขนาดตัวอักษร */
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.navbar a {
+  color: white; /* เปลี่ยนสีลิงก์เป็นสีขาว */
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.left-section {
+  flex: 1;
+  text-align: center;
+}
+
+.left-section img {
+  width: 550px;
+  height: auto;
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-left: 80px;
+}
+
+.right-section {
+  flex: 1;
+  max-width: 400px;
+  min-height: 430px;
+  padding: 20px;
+  background-color: #f8f9fa; /* พื้นหลังเล็กน้อย */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  margin-right: 200px; /* เว้นระยะจากขอบขวา */
+  margin-top: 80px; /* เลื่อนลงมาตรงกลาง */
+}
+
+.right-section h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+.nav-link {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 50px;
+}
+.nav-link:hover {
+  color: #dc9e15 !important;
+}
+.nav-link.timer {
+  color: #dc9e15 !important;
+}
+.navbar-nav {
+  margin-right: 30px; /* เพิ่มระยะห่างจากขอบขวา */
+}
+.edittime-container {
+  max-width: 45%;
+  min-height: 340px;
+  margin: auto;
+  padding: 20px;
+  background: #8a8a8a;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.headbgedit {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  /* border-radius: 15px 15px 0px 0px; */
+  width: 100%;
+}
+
+.time {
+  display: flex; /* ใช้ flexbox สำหรับจัดเรียง */
+  justify-content: space-between; /* จัดระยะห่างระหว่างองค์ประกอบ */
+  font-weight: bold; /* เน้นตัวหนา */
+  margin-bottom: 0px; /* เพิ่มระยะห่างด้านล่าง */
+  font-size: 18px;
+}
+
+.time-unit {
+  flex: 1; /* ให้แต่ละองค์ประกอบใช้พื้นที่เท่ากัน */
+  margin: 0 5px; /* เพิ่มช่องว่างระหว่างเวลา */
+}
+.form-group {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+label {
+  display: block; /* ทำให้ label เป็นบล็อกเพื่อให้แสดงบนบรรทัดใหม่ */
+  margin-bottom: 0px; /* เพิ่มช่องว่างด้านล่างให้กับ label */
+}
+
+select {
+  width: 100%; /* ทำให้ select ใช้ความกว้างเต็มที่ */
+  padding: 8px; /* เพิ่มช่องว่างภายใน */
+  border: 1px solid #ccc; /* ขอบเบา ๆ */
+  border-radius: 4px; /* มุมโค้ง */
+  font-size: 14px; /* ขนาดฟอนต์ */
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.songna {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.repeat1 {
+  margin-top: 5px;
+}
+.btn-container {
+  display: flex; /* ใช้ flexbox สำหรับจัดเรียงปุ่ม */
+  gap: 5px; /* กำหนดระยะห่างระหว่างปุ่ม */
+  justify-content: center; /* จัดให้อยู่ตรงกลาง */
+  margin-top: 10px; /* เพิ่มช่องว่างด้านบน */
+  margin-left: 310px;
+}
+
+.btn-cancle,
+.btn-start {
+  padding: 10px 20px;
+  margin: 0 5px; /* กำหนดระยะห่างด้านข้าง */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* เพิ่ม margin ด้านขวาให้ปุ่ม Cancel */
+.btn-cancle {
+  margin-right: 10px; /* กำหนดระยะห่างระหว่างปุ่ม Cancel และ Start */
+  background-color: red;
+  color: white;
+}
+
+.btn-start {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-cancle:hover {
+  background-color: darkred;
+}
+
+.btn-start:hover {
+  background-color: darkblue;
+  color: white;
+}

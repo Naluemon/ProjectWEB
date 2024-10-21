@@ -77,21 +77,17 @@ body {
 }
 
 .timer-box {
-  margin: 100px 350px 10px;
-  width: 840px;
+  margin: 60px 330px 25px;
+  width: 700px;
   padding: 20px;
   border: 2px solid #000000;
   border-radius: 15px;
   background-color: white;
-  font-size: 200px;
+  text-align: center;
+  font-size: 160px;
   font-weight: bold;
   color: black;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-}
-.timer-box li {
-  margin: 0; /* ลบ margin ของ li */
-  list-style: none; /* ลบจุดหน้าชื่อ */
-  width: 840px;
 }
 .container {
   display: flex;
@@ -100,16 +96,18 @@ body {
   background-color: #fcecec; /* สีพื้นหลังของหน้าจอ */
   color: white;
   text-decoration: none;
+  margin-left: 75px;
 }
 .btn {
   width: 100px;
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
   color: white;
   margin: 10px;
-  font-weight: 1000;
+  font-weight: bold;
+  margin-left: 60px;
 }
 .btn-edit {
   background-color: red;
@@ -138,7 +136,6 @@ body {
   background-color: rgb(3, 96, 3);
 }
 /*alert box*/
-
 .custom-alert {
   display: none; /* ซ่อน dialog ไว้ก่อน */
   position: fixed;

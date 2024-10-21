@@ -27,9 +27,8 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TIMMY.com</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="TIMMYcss/Head for Timer.css">
-
-    <script src="js/bootstrap.bundle.min.js"></script> 
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="TIMMYcss/Timer.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg">
@@ -106,7 +105,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
         </li>
     </div>
     <div class="container">
-        <button class="btn btn-edit" onclick="window.location.href='Edit Timer.php'">Edit</button>
+        <button class="btn btn-edit" onclick="window.location.href='EditTimer.php'">Edit</button>
         <button class="btn btn-reset" onclick="resetTimer()">Reset</button>
         <button class="btn btn-start" onclick="startCountdown()">Start</button>
     </div>

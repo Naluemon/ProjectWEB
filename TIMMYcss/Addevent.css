@@ -20,6 +20,7 @@
   font-size: 18px;
   text-align: right; /* ทำให้ข้อความอยู่ด้านขวา */
   white-space: nowrap; /* ป้องกันการแบ่งบรรทัด */
+  margin-left: -25px;
 }
 
 label {
@@ -52,6 +53,74 @@ input {
   text-align: center;
 }
 .form-control-Pro {
+  text-align: left;
+  width: 400px;
+  padding: 8px; /* เพิ่มระยะห่างภายใน */
+  border: 1px solid #ccc; /* ขอบกล่อง */
+  border-radius: 4px; /* มุมโค้ง */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  background-color: #ffffff; /* สีพื้นหลัง */
+  color: black;
+}
+.container-Pro {
+  margin-top: 10px;
+  width: 35%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100; /* ให้ความสูงของ container ครอบคลุมหน้าจอทั้งหมด */
+  margin-left: 450px;
+}
+
+.add-event-btn,
+.cancle-event-btn {
+  margin-top: 100px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.add-event-btn button,
+.cancle-event-btn button {
+  font-size: 1.2em; /* ปรับขนาดตัวอักษรในปุ่ม */
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  flex: 1; /* ให้ปุ่มมีขนาดเท่ากัน */
+}
+.add-event-btn button {
+  background-color: #006aff;
+  color: white;
+}
+
+.add-event-btn button:hover {
+  background-color: darkblue; /* เปลี่ยนสีเมื่อ hover */
+  color: white;
+}
+
+.cancle-event-btn button {
+  background-color: #ef5252;
+  color: white;
+}
+
+.cancle-event-btn button:hover {
+  background-color: #d43f3f; /* สีเมื่อ hover */
+}
+
+.btn-add-cancle {
+  display: flex; /* ใช้ flexbox จัดให้อยู่แถวเดียวกัน */
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+  position: absolute;
+  top: 300px;
+  left: 60.5%;
+  transform: translateX(-50%); /* ปรับให้อยู่กลาง */
+}
+.form-control-Pro {
+  /*เลือกสีใน addevent*/
   text-align: left;
   width: 400px;
   padding: 8px; /* เพิ่มระยะห่างภายใน */

@@ -24,7 +24,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TIMMY.com</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="TIMMYcss/Head for Timer.css">

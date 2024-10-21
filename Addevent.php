@@ -52,8 +52,7 @@ $conn->close();
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <script src="js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="TIMMYcss/Head.css" />
-    <link rel="stylesheet" href="TIMMYcss/Profile.css" />
-    <link rel="stylesheet" href="TIMMYcss/Calendar.css" />
+    <link rel="stylesheet" href="TIMMYcss/Addevent.css" />
 </head>
 <body>
     <div class="headpf">
@@ -63,7 +62,7 @@ $conn->close();
         <form method="POST" action="Addevent.php">
             <div class="form-group">
                 <label for="event">Event Name:</label>
-                <input type="text" class="form-control-Pro"  name="event" required />
+                <input type="text" class="form-control-Pro"  name="event" placeholder="Event Name" required />
             </div>
             <div class="form-group">  
                 <label for="eventDate" >Date:</label><br>
@@ -88,7 +87,7 @@ $conn->close();
                 <button type="button" class="btn btn-danger" onclick="window.location.href='Calendar.php';">cancel</button>
                 </div>
                 <div class="add-event-btn">
-                    <button type="submit" class="btn btn-warning">Add Event</button> <!-- ปุ่ม Add Event -->
+                    <button type="submit" class="btn btn-primary">Add Event</button> <!-- ปุ่ม Add Event -->
                 </div>
             </div>
         </form>

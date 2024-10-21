@@ -1,28 +1,27 @@
 .container-Regis {
   margin-top: 10px;
-  width: 35%;
+  width: 500px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100; /* ให้ความสูงของ container ครอบคลุมหน้าจอทั้งหมด */
-  margin-left: 450px;
+  margin-left: 400px;
 }
 .form-control-Regis {
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: 17px;
   padding: 10px;
-  width: 400px;
+  width: 400px; /*ช่องใส่ข้อมูล*/
 }
 /*เนื้อหา จากตรงนี้*/
 .headpf {
   font-size: 40px;
   text-align: center;
-  color: #00275e;
+  color: #002953;
   font-weight: bold;
   margin-top: 20px;
-  /* margin-top: 30px; */
 }
 .form-group {
   display: flex; /* จัดให้อยู่ในแถวเดียวกัน */
@@ -31,51 +30,48 @@
   text-align: right;
   margin-top: 15px;
   font-weight: bold;
-  color: #00275e;
+  color: #002953;
 }
 
 label {
   width: 100px; /* กำหนดความกว้างของ label */
   margin-right: 10px; /* เพิ่มระยะห่างระหว่าง label กับ input */
+  font-size: 18px;
 }
 
 input {
   flex: 1; /* กำหนด input ให้ขยายเต็มพื้นที่ */
   color: rgb(0, 0, 0);
 }
-.btn-edit {
-  background-color: #006aff;
-  border-radius: 5px;
-  border: 2px solid #006aff;
-  width: 70px;
-  color: #ffffff;
-  margin-right: 5px; /* จัดปุ่มให้อยู่กึ่งกลาง */
-  padding: 10px 20px; /* เพิ่มระยะห่างภายในปุ่ม */
-  text-align: center;
+.btn-primary {
+  color: white;
+  background-color: rgb(0, 85, 255); /* สีพื้นหลัง */
+  border: none; /* ไม่มีกรอบ */
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-right: 0px;
+}
+.btn-primary:hover {
+  background-color: darkblue; /* สีพื้นหลังเมื่อเอาเมาส์ไปวาง */
 }
 
-.dropbtn {
-  width: 200px; /* กำหนดความกว้างของปุ่มดรอปดาวน์ */
-  padding: 15px; /* เพิ่มระยะห่างภายในปุ่ม */
-  font-size: 16px; /* เพิ่มขนาดฟอนต์ */
+.btn-primary a {
+  color: white; /* สีตัวอักษร */
+  text-decoration: none; /* ไม่มีเส้นใต้ */
 }
 
-.dropdown-content {
-  width: 220px; /* กำหนดความกว้างของตัวเลือก */
-  padding: 10px 0; /* เพิ่มระยะห่างด้านใน */
-}
-
-.dropdown-content a {
-  font-size: 16px; /* เพิ่มขนาดฟอนต์ของตัวเลือก */
-  padding: 12px 16px; /* เพิ่มระยะห่างภายในของแต่ละลิงก์ */
-}
-.btn-cancel{
+.btn-cancel {
   color: white;
   background-color: red; /* สีพื้นหลัง */
   border: none; /* ไม่มีกรอบ */
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-left: 10px;
 }
 
-.btn-cancel:hover{
+.btn-cancel:hover {
   background-color: darkred; /* สีพื้นหลังเมื่อเอาเมาส์ไปวาง */
 }
 

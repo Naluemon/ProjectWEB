@@ -53,7 +53,7 @@ session_start();
             </select>
             </div>
             
-            <div style="text-align: right">
+            <div style="text-align: right" class="button-container">
             <button type="reset" class="btn btn-cancel" onclick= "window.location.href='Formlogin.html';" >Cancel</button>
             <button type="Submit" class="btn btn-primary">Submit</button>
             </div>

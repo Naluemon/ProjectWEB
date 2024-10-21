@@ -49,6 +49,7 @@ mysqli_close($conn);
     <script src="js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="TIMMYcss/Head.css" />
     <link rel="stylesheet" href="TIMMYcss/Calendar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -132,14 +133,13 @@ mysqli_close($conn);
     </nav>
     <div class="calendar-container">
         <div class="headbg">
-            <h2>Calendar</h2>
+            <h3>Calendar</h3>
         </div>
         <div class="calendar-navigation">
             <a href="#" id="prev-month">&#9664; Previous</a>
             <span id="month-name">October 2024</span>
             <a href="#" id="next-month">Next &#9654;</a>
         </div>
-
         <table id="calendar-table">
             <tr>
                 <th>Sun</th>
@@ -154,8 +154,10 @@ mysqli_close($conn);
         </table>
     </div>
     <div class="add-event-btn">
-        <button id="add-event-button" class="btn">Add Event</button> <!-- ปุ่ม Add Event -->
-    </div>
+    <button id="add-event-button" class="btn">
+        <i class="fas fa-plus"></i> Add Event <!-- ไอคอน add ข้างหน้าข้อความ -->
+    </button>
+</div>
 
     <script>
         const months = [

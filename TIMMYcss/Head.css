@@ -1,5 +1,5 @@
 body {
-  background-color: #ffecec;
+  background-color: #ffc4c4;
   font-family: "Bahnschrift SemiBold SemiCondensed";
 }
 .navbar {
@@ -110,7 +110,7 @@ body {
   text-decoration: none; /* ลบเส้นใต้ */
 }
 h1 {
-  background-color: #ffecec;
+  background-color: #ffc4c4;
   text-align: left;
   font-family: "Bahnschrift SemiBold SemiCondensed";
   font-size: 75px;

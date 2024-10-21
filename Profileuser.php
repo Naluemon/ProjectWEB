@@ -30,6 +30,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="TIMMYcss/Profile.css">
     <link rel="stylesheet" href="TIMMYcss/Head.css">
+    <link rel="stylesheet" href="TIMMYcss/EditProfile.css">
     <script src="js/bootstrap.bundle.min.js"></script> 
 </head>
 <body>
@@ -138,7 +139,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
                     </table>
             </div>
             <div style="text-align: right">
-            <button type="button" class="btn btn-primary" onclick= "window.location.href='EditProfileuser.php';">Edit</button>
+            <button type="button" class="btn btn-edit" onclick= "window.location.href='EditProfileuser.php';">Edit</button>
             </div>
         </form>
     </div>

@@ -20,6 +20,7 @@ session_start();
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="TIMMYcss/Profile.css">
     <link rel="stylesheet" href="TIMMYcss/Head.css">
+    <link rel="stylesheet" href="TIMMYcss/EditProfile.css">
     <script src="js/bootstrap.bundle.min.js"></script> 
 </head>
 <body>
@@ -123,8 +124,8 @@ session_start();
             </div>
 
             <div style="text-align: right">
-            <button type="button" class="btn btn-danger" onclick="window.location.href='Profileadmin.php';">cancel</button>
-            <button type="submit" class="btn btn-primary"> save </button>
+            <button type="button" class="btn btn-cancel" onclick="window.location.href='Profileadmin.php';">cancel</button>
+            <button type="submit" class="btn btn-edit"> save </button>
             </div>
         </form>
     </div>

@@ -128,7 +128,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
                     </table>
             </div>
             <div style="text-align: right">
-            <button type="button" class="btn btn-primary" onclick= "window.location.href='EditProfileadmin.php';">Edit</button>
+            <button type="button" class="btn btn-edit" onclick= "window.location.href='EditProfileadmin.php';">Edit</button>
             </div>
         </form>
     </div>

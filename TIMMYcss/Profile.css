@@ -3,7 +3,7 @@
   text-align: center;
   color: #00275e;
   font-weight: bold;
-  /* margin-top: 50px; */
+  margin-top: 40px;
 }
 
 .form-group {
@@ -27,26 +27,7 @@ input {
   flex: 1; /* กำหนด input ให้ขยายเต็มพื้นที่ */
   color: black;
 }
-.btn-edit {
-  background-color: #006aff;
-  border-radius: 5px;
-  border: 2px solid #006aff;
-  width: 70px;
-  color: #ffffff;
-  margin-right: 5px; /* จัดปุ่มให้อยู่กึ่งกลาง */
-  padding: 10px 20px; /* เพิ่มระยะห่างภายในปุ่ม */
-  text-align: center;
-}
-.btn-cancel {
-  background-color: #ff0000;
-  border-radius: 5px;
-  border: 2px solid #ff0000;
-  width: 70px;
-  color: #ffffff;
-  margin-right: 5px; /* จัดปุ่มให้อยู่กึ่งกลาง */
-  padding: 10px 20px; /* เพิ่มระยะห่างภายในปุ่ม */
-  text-align: center;
-}
+
 .form-control-Pro {
   text-align: left;
   width: 400px;

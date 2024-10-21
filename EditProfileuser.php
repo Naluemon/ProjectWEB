@@ -11,6 +11,7 @@ error_reporting(0);
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="TIMMYcss/Profile.css">
     <link rel="stylesheet" href="TIMMYcss/Head.css">
+    <link rel="stylesheet" href="TIMMYcss/EditProfile.css">
     <script src="js/bootstrap.bundle.min.js"></script> 
 </head>
 <body>
@@ -73,9 +74,11 @@ error_reporting(0);
                     $redirectPage = "Formlogin.html";
                 }
                 ?>
-                <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
+                <a class="nav-link now" href="<?php echo $redirectPage; ?>">Profile</a>
             </li>
-            
+            <li class="nav-item">
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
+            </li>
         </ul>
     </div>
 </nav>
@@ -135,8 +138,8 @@ error_reporting(0);
             </div>
 
             <div style="text-align: right">
-            <button type="button" class="btn btn-danger" onclick="window.location.href='Profileuser.php';">cancel</button>
-            <button type="submit" class="btn btn-primary"> save </button>
+            <button type="button" class="btn btn-cancel" onclick="window.location.href='Profileuser.php';">cancel</button>
+            <button type="submit" class="btn btn-edit"> save </button>
             </div>
         </form>
     </div>

@@ -1,0 +1,37 @@
+.button-container {
+  display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่ง */
+  justify-content: flex-end; /* จัดให้ปุ่มอยู่ทางขวา */
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.btn-edit,
+.btn-cancel {
+  border-radius: 5px; /* มุมโค้ง */
+  color: #ffffff; /* สีตัวอักษร */
+  padding: 10px 15px; /* เพิ่มระยะห่างภายในปุ่ม */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือ */
+  transition: background-color 0.3s, transform 0.3s; /* เอฟเฟกต์การเปลี่ยนแปลง */
+  margin-left: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+  margin-top: 10px;
+}
+
+.btn-edit {
+  background-color: #006aff; /* สีพื้นหลัง */
+  border: 2px solid #006aff; /* ขอบ */
+}
+
+.btn-edit:hover {
+  background-color: darkblue; /* สีเมื่อเอาเมาส์ไปวาง */
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #ff0000; /* สีพื้นหลัง */
+  border: 2px solid #ff0000; /* ขอบ */
+}
+
+.btn-cancel:hover {
+  background-color: darkred; /* สีเมื่อเอาเมาส์ไปวาง */
+  color: white;
+}

@@ -27,36 +27,6 @@ body {
   margin-top: 50px;
 }
 
-.left-section {
-  flex: 1;
-  text-align: center;
-}
-
-.left-section img {
-  width: 550px;
-  height: auto;
-  margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 80px;
-}
-
-.right-section {
-  flex: 1;
-  max-width: 400px;
-  min-height: 430px;
-  padding: 20px;
-  background-color: #f8f9fa; /* พื้นหลังเล็กน้อย */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-  margin-right: 200px; /* เว้นระยะจากขอบขวา */
-  margin-top: 80px; /* เลื่อนลงมาตรงกลาง */
-}
-
-.right-section h2 {
-  text-align: center;
-  font-weight: 700;
-  font-size: 50px;
-}
-
 .form-control {
   margin-bottom: 15px;
 }
@@ -75,40 +45,69 @@ body {
   margin-right: 30px; /* เพิ่มระยะห่างจากขอบขวา */
 }
 .edittime-container {
-  max-width: 45%;
+  max-width: 50%;
   min-height: 340px;
   margin: auto;
-  padding: 20px;
-  background: #8a8a8a;
+  padding: 30px;
+  background: rgb(255, 251, 251);
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  margin-top: 10px;
+  position: relative;
 }
 
 .headbgedit {
   font-size: 35px;
   text-align: center;
-  margin-bottom: 10px;
-  background-color: #ffffff;
-  /* border-radius: 15px 15px 0px 0px; */
-  width: 100%;
+  margin: 0;
+  margin-top: -30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-radius: 15px 15px 0 0; /* โค้งเฉพาะด้านบน */
+  width: calc(
+    100% + 60px
+  ); /* ปรับให้ความกว้างเต็ม + padding ของ edittime-container */
+  color: white;
+  padding: 15px;
+  background-color: #dc9e15; /* สีพื้นหลัง */
+  margin-left: -30px; /* ปรับระยะเพื่อให้ตรงกับ container */
+  margin-right: -30px; /* ปรับระยะเพื่อให้ตรงกับ container */
 }
-
 .time {
   display: flex; /* ใช้ flexbox สำหรับจัดเรียง */
   justify-content: space-between; /* จัดระยะห่างระหว่างองค์ประกอบ */
   font-weight: bold; /* เน้นตัวหนา */
   margin-bottom: 0px; /* เพิ่มระยะห่างด้านล่าง */
   font-size: 18px;
+  color: black;
 }
 
 .time-unit {
   flex: 1; /* ให้แต่ละองค์ประกอบใช้พื้นที่เท่ากัน */
-  margin: 0 5px; /* เพิ่มช่องว่างระหว่างเวลา */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  margin-top: -5px;
 }
+.time-unit label {
+  margin-bottom: -5px; /* เพิ่มระยะห่างด้านล่างให้กับ label */
+}
+
+.time-unit select {
+  margin-top: -5px; /* เพิ่มระยะห่างด้านบนให้กับ select */
+}
+
+.hours {
+  margin-right: 50px; /* เพิ่มระยะห่างด้านขวาให้กับ hours */
+}
+
+.minutes {
+  margin-right: 50px; /* เพิ่มระยะห่างด้านขวาให้กับ minutes */
+}
+
 .form-group {
   font-size: 18px;
   font-weight: bold;
+  width: 60%;
+  color: black;
 }
 
 label {
@@ -117,11 +116,19 @@ label {
 }
 
 select {
-  width: 100%; /* ทำให้ select ใช้ความกว้างเต็มที่ */
-  padding: 8px; /* เพิ่มช่องว่างภายใน */
+  width: 50%; /* ให้ select ขยายเต็มความกว้างของ parent */
+  padding: 10px 20px; /* เพิ่มช่องว่างภายใน */
   border: 1px solid #ccc; /* ขอบเบา ๆ */
   border-radius: 4px; /* มุมโค้ง */
   font-size: 14px; /* ขนาดฟอนต์ */
+  margin: 0px;
+}
+#songs {
+  width: 60%; /* ทำให้ select ใช้ความกว้างเต็มที่ */
+  padding: 15px 30px; /* เพิ่มช่องว่างภายใน */
+  border: 1px solid #ccc; /* ขอบเบา ๆ */
+  border-radius: 4px; /* มุมโค้ง */
+  font-size: 17px;
 }
 input[type="text"] {
   width: 100%;
@@ -131,21 +138,33 @@ input[type="text"] {
 }
 
 .songna {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: -20px;
+  margin-bottom: -20px;
   font-size: 18px;
   font-weight: bold;
+  color: black;
+}
+.audio {
+  margin-top: 5px;
 }
 
-.repeat1 {
-  margin-top: 5px;
+.repeat1 label,
+.repeat1 input[type="checkbox"] {
+  display: inline-block; /* แสดงผลทั้ง label และ checkbox ในบรรทัดเดียวกัน */
+  vertical-align: middle; /* จัดตำแหน่งแนวตั้งให้อยู่กลาง */
+  margin-top: 10px;
+}
+
+.repeat1 label {
+  margin-right: 10px; /* เพิ่มระยะห่างระหว่าง label กับ checkbox */
 }
 .btn-container {
   display: flex; /* ใช้ flexbox สำหรับจัดเรียงปุ่ม */
   gap: 5px; /* กำหนดระยะห่างระหว่างปุ่ม */
   justify-content: center; /* จัดให้อยู่ตรงกลาง */
-  margin-top: 10px; /* เพิ่มช่องว่างด้านบน */
-  margin-left: 310px;
+  margin-top: -40px; /* เพิ่มช่องว่างด้านบน */
+  margin-left: 370px;
+  /* margin-bottom: -20px; */
 }
 
 .btn-cancle,
@@ -160,7 +179,7 @@ input[type="text"] {
 
 /* เพิ่ม margin ด้านขวาให้ปุ่ม Cancel */
 .btn-cancle {
-  margin-right: 10px; /* กำหนดระยะห่างระหว่างปุ่ม Cancel และ Start */
+  margin-right: px; /* กำหนดระยะห่างระหว่างปุ่ม Cancel และ Start */
   background-color: red;
   color: white;
 }

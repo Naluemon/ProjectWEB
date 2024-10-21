@@ -99,23 +99,29 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
     </div>
 </nav>
 
-    <div class="edittime-container">
-        <div class = "headbgedit">Edit Timer</div>
-            <div class = "time">
-                <div class = "hours">
-                    <label for="hours">Hours</label><br>
-                    <select id="hours"></select>
-                </div>
-                <div class="minutes">
-                    <label for="minutes">Minutes</label><br>
-                    <select id="minutes"></select>   
-                </div>
-                <div class="seconds">
-                    <label for="seconds">Seconds</label><br>
-                    <select id="seconds"></select>
-                </div>
-            </div><br>
-        
+        <div class="edittime-container">
+    <div class="headbgedit">Edit Timer</div>
+    <div class="time">
+        <div class="time-unit hours">
+            <label for="hours">Hours</label><br>
+            <select id="hours">
+                <!-- เพิ่มตัวเลือกชั่วโมง -->
+            </select>
+        </div>
+        <div class="time-unit minutes">
+            <label for="minutes">Minutes</label><br>
+            <select id="minutes">
+                <!-- เพิ่มตัวเลือกนาที -->
+            </select>   
+        </div>
+        <div class="time-unit seconds">
+            <label for="seconds">Seconds</label><br>
+            <select id="seconds">
+                <!-- เพิ่มตัวเลือกวินาที -->
+            </select>
+        </div>
+    </div><br>
+
     <div class="form-group">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" placeholder="send work" required>
@@ -139,18 +145,19 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
         </audio>
     </div> 
     <div class="repeat1">
-            <label for="repeat">Repeat Sound </label>
+            <label for="repeat">Repeat Sound :</label>
             <input type="checkbox" id="repeat">
     </div>
         
         <div class="btn-container">
             <button class="btn-cancle" onclick= "window.location.href = 'Timer.php'">Cancle</a></button>
-            <button class="btn-start" onclick="startTimer()">Start Timer</a></button>
+            <button class="btn-start" onclick="startTimer()">Set Time </a></button>
             
         </div>
 
-       
-    </div>
+      
+    </div> 
+</di>
     <script>
         const hoursSelect = document.getElementById("hours");
         for (let i = 0; i <= 24; i++) {

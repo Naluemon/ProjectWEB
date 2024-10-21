@@ -1,5 +1,5 @@
 body {
-  background-color: #ffc4c4;
+  background-color: #ffc4c4 !important;
   font-family: "Bahnschrift SemiBold SemiCondensed";
 }
 .navbar {

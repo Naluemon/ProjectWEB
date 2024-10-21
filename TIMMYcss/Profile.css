@@ -1,13 +1,9 @@
 .headpf {
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   color: #00275e;
   font-weight: bold;
-  margin-top: 80px;
-}
-.headpf h2 {
-  margin-bottom: 30px;
-  font-size: 40px;
+  /* margin-top: 50px; */
 }
 
 .form-group {

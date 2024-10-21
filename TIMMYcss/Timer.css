@@ -1,5 +1,5 @@
 body {
-  background-color: #ffc4c4;
+  background-color: #ffd1d1;
   font-family: "Bahnschrift SemiBold SemiCondensed";
 }
 
@@ -93,7 +93,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffc4c4; /* สีพื้นหลังของหน้าจอ */
+  background-color: #ffd1d1; /* สีพื้นหลังของหน้าจอ */
   color: white;
   text-decoration: none;
   margin-left: 75px;

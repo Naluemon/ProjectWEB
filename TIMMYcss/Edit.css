@@ -7,6 +7,10 @@ table {
   border: -2px solid #ffcc00; /* เส้นขอบรอบตาราง */
   margin-bottom: 0px;
 }
+.table thead th {
+  background-color: #c7c1c1; /* สีพื้นหลังของหัวตาราง */
+  color: rgb(0, 0, 0); /* สีของตัวอักษรในหัวตาราง */
+}
 
 td {
   padding: 10px;

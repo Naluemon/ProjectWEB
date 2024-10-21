@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+
 <head>
 
 </head>
+
 <body>
-<?php
+    <?php
     session_start(); // เริ่มต้น session เพื่อใช้งาน $_SESSION
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "timmy"; //ฐานข้อมูลที่สร้างไว้แล้ว
-  
+    
     // เชื่อมต่อกับฐานข้อมูล
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -28,17 +30,32 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // ถ้าผู้ใช้เป็นผู้สร้างเหตุการณ์นี้เอง ให้ทำการลบ
+    // ตรวจสอบว่าผู้ใช้เป็นผู้สร้างเหตุการณ์หรือไม่
     if ($result->num_rows > 0) {
         $sqlDelete = "DELETE FROM events WHERE id = ?";
         $stmtDelete = $conn->prepare($sqlDelete);
-        $stmtDelete->bind_param("i", $id);
-        $stmtDelete->execute();
 
-        if (mysqli_affected_rows($conn)) {
-            echo "ลบข้อมูลแล้ว";
+        if ($stmtDelete) {
+            $stmtDelete->bind_param("i", $id);
+
+            // ใช้ execute เพื่อลบข้อมูล
+            if ($stmtDelete->execute()) {
+                // ตรวจสอบว่ามีแถวที่ถูกลบหรือไม่
+                if ($stmtDelete->affected_rows > 0) {
+                    // ลบสำเร็จ นำผู้ใช้ไปที่หน้า Calendar.php
+                    header("Location: Calendar.php");
+                    exit; // หยุดการทำงานของสคริปต์หลังจาก redirect
+                } else {
+                    echo "ไม่สามารถลบข้อมูลได้หรือไม่พบเหตุการณ์นี้";
+                }
+            } else {
+                echo "เกิดข้อผิดพลาดในการลบข้อมูล: " . $stmtDelete->error;
+            }
+
+            // ปิดคำสั่งที่เตรียมไว้
+            $stmtDelete->close();
         } else {
-            echo "ไม่สามารถลบข้อมูลได้";
+            echo "เกิดข้อผิดพลาดในการเตรียมคำสั่ง SQL: " . $conn->error;
         }
     } else {
         echo "คุณไม่มีสิทธิ์ลบเหตุการณ์นี้";
@@ -46,7 +63,7 @@
 
     $stmt->close();
     mysqli_close($conn);
-?>
+    ?>
 </body>
+
 </html>
-<meta http-equiv="refresh" content="1;URL=Calendar.php"/>

@@ -26,43 +26,48 @@
     
     // ใช้ SweetAlert2 แสดงข้อความแจ้งเตือน
     echo "
-    <script>
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'You won’t be able to revert this!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // ถ้าผู้ใช้ยืนยันการลบ
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'delete_process.php?UserID=" . $UserID . "', true);
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        // แสดงข้อความแจ้งเตือนเมื่อการลบเสร็จสิ้น
-                        Swal.fire({
-                            title: 'Deleted!',
-                            text: 'Your member has been deleted.',
-                            icon: 'success'
-                        }).then(() => {
-                            window.location.href = 'showdatamember.php'; // รีเฟรชหน้าไปที่ showdatamember.php
-                        });
-                    } else {
-                        // หากไม่สามารถลบได้
-                        Swal.fire('Error!', 'There was an error deleting the member.', 'error');
-                    }
-                };
-                xhr.send();
-            } else {
-                // หากผู้ใช้เลือกยกเลิก
-                Swal.fire('Member not deleted', '', 'info');
-            }
-        });
-    </script>
-    ";
+<script>
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You won’t be able to revert this!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // ถ้าผู้ใช้ยืนยันการลบ
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'delete_process.php?UserID=" . $UserID . "', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // แสดงข้อความแจ้งเตือนเมื่อการลบเสร็จสิ้น
+                    Swal.fire({
+                        title: 'Deleted!',
+                        text: 'Your member has been deleted.',
+                        icon: 'success'
+                    }).then(() => {
+                        window.location.href = 'showdatamember.php'; // รีเฟรชหน้าไปที่ showdatamember.php
+                    });
+                } else {
+                    // หากไม่สามารถลบได้
+                    Swal.fire('Error!', 'There was an error deleting the member.', 'error');
+                }
+            };
+            xhr.send();
+        } else {
+            // หากผู้ใช้เลือกยกเลิก
+            Swal.fire({
+                title: 'Member not deleted',
+                icon: 'info'
+            }).then(() => {
+                window.location.href = 'showdatamember.php'; // กลับไปหน้า showdatamember.php
+            });
+        }
+    });
+</script>
+";
     mysqli_close($conn);
     ?>
 </body>

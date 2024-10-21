@@ -8,9 +8,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="TIMMYcss/Profile.css">
     <link rel="stylesheet" href="TIMMYcss/Head.css">
-    <link rel="stylesheet" href="TIMMYcss/Edit.css" />
+    <link rel="stylesheet" href="TIMMYcss/Showevent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/bootstrap.bundle.min.js"></script> 
 </head>
 <body>
@@ -166,7 +166,7 @@ session_start();
                 ?>
             </tbody>
         </table>
-    </div>
+    </>
     <?php
         mysqli_close($conn);
     ?>
@@ -177,11 +177,22 @@ session_start();
         }
         
         function confirmDelete(eventId) {
-            const userConfirmed = confirm("คุณต้องการลบข้อมูลนี้หรือไม่?");
-            if (userConfirmed) {
-                window.location.href = "Deleteinday.php?id=" + eventId;
-            }
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You won’t be able to revert this!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!, Delete!',
+        cancelButtonText: 'cancle'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // ถ้าผู้ใช้ยืนยันการลบ
+            window.location.href = 'Deleteinday.php?id=' + eventId;
         }
+    });
+}
     </script>
 </body>
 </html>

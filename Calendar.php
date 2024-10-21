@@ -4,7 +4,7 @@ session_start(); // เริ่มเซสชัน
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "timmy"; 
+$dbname = "timmy";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
@@ -38,9 +38,10 @@ if ($result->num_rows > 0) {
 
 $stmt->close();
 mysqli_close($conn);
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,82 +52,67 @@ mysqli_close($conn);
     <link rel="stylesheet" href="TIMMYcss/Calendar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg">
-    <?php
-                if($_SESSION['Status']=="ADMIN")
-                {
-                    $redirectPage = "Home_page_admin.php";
-                }
-                elseif($_SESSION['Status']=="USER")
-                {
-                    $redirectPage = "Homepage_User.php";
-                }
-                else{
-                    $redirectPage = "Formlogin.html";
-                }
-                ?>
+        <?php
+        if ($_SESSION['Status'] == "ADMIN") {
+            $redirectPage = "Home_page_admin.php";
+        } elseif ($_SESSION['Status'] == "USER") {
+            $redirectPage = "Homepage_User.php";
+        } else {
+            $redirectPage = "Formlogin.html";
+        }
+        ?>
         <a class="navbar-brand" href="<?php echo $redirectPage; ?>">TIMMY.com</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                <?php
-                if($_SESSION['Status']=="ADMIN")
-                {
-                    $redirectPage = "Calendar.php";
-                }
-                elseif($_SESSION['Status']=="USER")
-                {
-                    $redirectPage = "Calendar.php";
-                }
-                else{
-                    $redirectPage = "Formlogin.html";
-                }
-                ?>
+                    <?php
+                    if ($_SESSION['Status'] == "ADMIN") {
+                        $redirectPage = "Calendar.php";
+                    } elseif ($_SESSION['Status'] == "USER") {
+                        $redirectPage = "Calendar.php";
+                    } else {
+                        $redirectPage = "Formlogin.html";
+                    }
+                    ?>
                     <a class="nav-link calendar-link" href="<?php echo $redirectPage; ?>">Calendar</a>
                 </li>
                 <li class="nav-item">
-                <?php
-                if($_SESSION['Status']=="USER")
-                {
-                    $redirectPage = "Timer.php";
-                }
-                else{
-                    $redirectPage = "Formlogin.html";
-                }
-                ?>
+                    <?php
+                    if ($_SESSION['Status'] == "USER") {
+                        $redirectPage = "Timer.php";
+                    } else {
+                        $redirectPage = "Formlogin.html";
+                    }
+                    ?>
                     <a class="nav-link" id="timer-link" href="<?php echo $redirectPage; ?>">Timer</a>
                 </li>
                 <li class="nav-item">
-                <?php
-                if($_SESSION['Status']=="USER")
-                {
-                    $redirectPage = "Stats.php";
-                }
-                else{
-                    $redirectPage = "Formlogin.html";
-                }
-                ?>
+                    <?php
+                    if ($_SESSION['Status'] == "USER") {
+                        $redirectPage = "Stats.php";
+                    } else {
+                        $redirectPage = "Formlogin.html";
+                    }
+                    ?>
                     <a class="nav-link" id="stats-link" href="<?php echo $redirectPage; ?>">Stats</a>
                 </li>
                 <li class="nav-item">
-                <?php
-                if($_SESSION['Status']=="ADMIN")
-                {
-                    $redirectPage = "Profileadmin.php";
-                }
-                elseif($_SESSION['Status']=="USER")
-                {
-                    $redirectPage = "Profileuser.php";
-                }
-                else{
-                    $redirectPage = "Formlogin.html";
-                }
-                ?>
+                    <?php
+                    if ($_SESSION['Status'] == "ADMIN") {
+                        $redirectPage = "Profileadmin.php";
+                    } elseif ($_SESSION['Status'] == "USER") {
+                        $redirectPage = "Profileuser.php";
+                    } else {
+                        $redirectPage = "Formlogin.html";
+                    }
+                    ?>
                     <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -154,10 +140,10 @@ mysqli_close($conn);
         </table>
     </div>
     <div class="add-event-btn">
-    <button id="add-event-button" class="btn">
-        <i class="fas fa-plus"></i> Add Event <!-- ไอคอน add ข้างหน้าข้อความ -->
-    </button>
-</div>
+        <button id="add-event-button" class="btn">
+            <i class="fas fa-plus"></i> Add Event <!-- ไอคอน add ข้างหน้าข้อความ -->
+        </button>
+    </div>
 
     <script>
         const months = [
@@ -214,8 +200,8 @@ mysqli_close($conn);
 
                 cell.textContent = day;
 
-                 cell.addEventListener("click", () => {
-                     window.location.href = `Showevent.php?date=${date}`;
+                cell.addEventListener("click", () => {
+                    window.location.href = `Showevent.php?date=${date}`;
                 });
 
                 if (events[date]) {
@@ -225,12 +211,12 @@ mysqli_close($conn);
                         eventLabel.textContent = `${event.event}`; // แสดงเฉพาะชื่อเหตุการณ์
                         eventLabel.style.backgroundColor = event.color;
                         eventLabel.style.marginTop = '5px';
-                        
+
                         if (event.createdBy === 'ADMIN') {
                             eventLabel.style.border = '2px solid black'; // เพิ่มการสไตล์ event ของ ADMIN
                         }
-                            
-                        
+
+
                         // ตรวจสอบว่าเป็นเหตุการณ์ที่สร้างโดย ADMIN หรือ USER
                         if (event.createdBy === 'USER' || event.createdBy === 'ADMIN') {
                             // เพิ่ม listener คลิกที่เหตุการณ์
@@ -238,21 +224,21 @@ mysqli_close($conn);
                                 e.stopPropagation(); // หยุดการเกิดเหตุการณ์คลิกจาก cell
 
                                 // ตรวจสอบว่ามีปุ่ม Edit และ Delete หรือยัง
-                            const eventActions = eventLabel.querySelector('.event-actions');
-                            if (eventActions) {
-                                // ถ้ามีอยู่แล้ว ให้เอาปุ่มออก
-                                eventActions.remove();
-                            } else {
-                                // ถ้ายังไม่มี ให้สร้างปุ่มขึ้นมา
-                                const newEventActions = document.createElement("div");
-                                newEventActions.classList.add('event-actions');
-                                newEventActions.innerHTML = `
+                                const eventActions = eventLabel.querySelector('.event-actions');
+                                if (eventActions) {
+                                    // ถ้ามีอยู่แล้ว ให้เอาปุ่มออก
+                                    eventActions.remove();
+                                } else {
+                                    // ถ้ายังไม่มี ให้สร้างปุ่มขึ้นมา
+                                    const newEventActions = document.createElement("div");
+                                    newEventActions.classList.add('event-actions');
+                                    newEventActions.innerHTML = `
                                     <button onclick="editEvent(${event.id}, '${date}','${event.createdBy}')" class="btn btn-warning">Edit</button>
                                     <button onclick="deleteEvent(${event.id},'${event.createdBy}')" class="btn btn-danger">Delete</button>
                                 `;
-                                eventLabel.appendChild(newEventActions);
-                            }
-                        });
+                                    eventLabel.appendChild(newEventActions);
+                                }
+                            });
                         }
 
                         cell.appendChild(eventLabel);
@@ -282,12 +268,12 @@ mysqli_close($conn);
             window.location.href = `EditEvent.php?date=${date}&edit=${id}`; // นำไปยังหน้าแก้ไข
         }
 
-        function deleteEvent(id,createdBy) {
+        function deleteEvent(id, createdBy) {
             if (createdBy === 'ADMIN' && '<?php echo $_SESSION["Status"]; ?>' === 'USER') {
                 alert("You can't edit ADMIN event");
                 return;
-            }else {
-                (confirm("Are you sure you want to delete this event?")) 
+            } else {
+                (confirm("Are you sure you want to delete this event?"))
                 window.location.href = `DeleteEvent.php?id=${id}`; // นำไปยังหน้า Deleteevent.php
             }
         }
@@ -315,7 +301,7 @@ mysqli_close($conn);
 
         renderCalendar(currentMonthIndex);
 
-        document.getElementById("stats-link").addEventListener("click", function(e) {
+        document.getElementById("stats-link").addEventListener("click", function (e) {
             e.preventDefault(); // ป้องกันการเปลี่ยนหน้า
 
             // เช็คสถานะจากเซสชัน (ใช้ AJAX หรือแนวทางอื่นเพื่อดึงข้อมูลสถานะ)
@@ -329,7 +315,7 @@ mysqli_close($conn);
             }
         });
 
-        document.getElementById("timer-link").addEventListener("click", function(e) {
+        document.getElementById("timer-link").addEventListener("click", function (e) {
             e.preventDefault(); // ป้องกันการเปลี่ยนหน้า
 
             // เช็คสถานะจากเซสชัน (ใช้ AJAX หรือแนวทางอื่นเพื่อดึงข้อมูลสถานะ)
@@ -343,8 +329,9 @@ mysqli_close($conn);
             }
         });
         function confirmLogout() {
-        return confirm ('Are you sure you want to logout'); // แสดงข้อความยืนยัน
-    }
+            return confirm('Are you sure you want to logout'); // แสดงข้อความยืนยัน
+        }
     </script>
 </body>
+
 </html>

@@ -1,23 +1,41 @@
-.Texthd {
-  text-align: center;
-  font-size: 28px; /* ขนาดของข้อความสามารถปรับได้ตามต้องการ */
-  margin-bottom: 20px;
-}
 .containerS {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: auto;
+  max-width: 730px; /* ปรับความกว้างสูงสุดให้กว้างขึ้น */
+  margin: 20px auto; /* จัดกลางด้วย margin อัตโนมัติ */
+  padding: 20px; /* เพิ่ม padding ภายใน */
+  background-color: #ffffff; /* สีพื้นหลัง */
+  border-radius: 15px; /* มุมโค้ง */
+  box-shadow: 0 8px 16px rgba(95, 28, 28, 0.2); /* เงาที่นุ่มนวล */
 }
-canvas {
-  max-width: 100%;
-  height: 400px;
+
+.containerS:hover {
+  transform: scale(1.005); /* ขยายเมื่อเอาเมาส์ไปวาง (นุ่มนวลขึ้น) */
 }
+
+.Texthd {
+  font-size: 28px; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ตัวหนา */
+  text-align: center; /* จัดกลาง */
+  color: #2b2b2b; /* สีตัวอักษร */
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* เงาตัวอักษร */
+}
+
+#usageChart {
+  max-width: 100%; /* ให้แคนวาสขยายเต็มความกว้าง */
+  height: 400px; /* ความสูงของแคนวาส */
+  margin: 0 auto; /* จัดกลาง */
+  border: 2px solid #ffc9c9; /* ขอบ */
+  border-radius: 10px; /* มุมโค้ง */
+  background-color: #f8f8f8; /* พื้นหลังที่นุ่มนวล */
+}
+
 .total-usage {
-  font-size: 28px;
-  color: #333;
-  margin-top: 20px;
-  text-align: center;
+  font-size: 18px; /* ขนาดตัวอักษร */
+  text-align: center; /* จัดกลาง */
+  color: #2b2828; /* สีตัวอักษร */
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+  font-weight: bold; /* ตัวหนา */
+  background-color: #e7f3ff; /* สีพื้นหลัง */
+  border-radius: 8px; /* มุมโค้ง */
+  padding: 10px; /* เพิ่ม padding */
 }

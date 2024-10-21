@@ -57,7 +57,6 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stats</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="TIMMYcss/Profile.css">
     <link rel="stylesheet" href="TIMMYcss/Head.css">
     <link rel="stylesheet" href="TIMMYcss/Stats.css">
     <script src="js/bootstrap.bundle.min.js"></script>
